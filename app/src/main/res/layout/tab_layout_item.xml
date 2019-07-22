@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp">
+
+    <TextView
+        android:id="@+id/hotel_tab_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="流行音乐"
+        android:textColor="#ff666666"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>
