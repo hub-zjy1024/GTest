@@ -25,4 +25,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation('me.dm7.barcodescanner:zbar:1.9.13', {
+        exclude group: 'com.android.support'
+    })
+    implementation('com.google.zxing:core:3.3.0', {
+        exclude group: 'com.android.support'
+    })
+    implementation('com.google.zxing:android-core:3.3.0', {
+        exclude group: 'com.android.support'
+    })
 }
