@@ -1,9 +1,11 @@
 package p.js.gtest;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -55,12 +57,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        findViewById(R.id.test_ac_mediacodec).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MediaCodecTestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         PAdapter adapter = new PAdapter(this, contents);
         viewPager.setAdapter(adapter);
         scrTabView.bindViewPager(viewPager);
         mLlimit = (int) (getScreenWidth() * 0.6);
         TextView tv;
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 100);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
     }
 
     static class PAdapter extends PagerAdapter {

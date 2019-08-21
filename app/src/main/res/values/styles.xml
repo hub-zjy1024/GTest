@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name = "android:colorControlHighlight">@color/colorAccent</item>
+        <item name = "android:textAllCaps">false</item>
+<!--        android:textAllCaps="false"-->
     </style>
 
 </resources>

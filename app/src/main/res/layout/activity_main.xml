@@ -70,6 +70,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="别人的Tablayout"/>
+    <Button
+        android:id="@+id/test_ac_mediacodec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mediaCodec"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/m_mViewPage"

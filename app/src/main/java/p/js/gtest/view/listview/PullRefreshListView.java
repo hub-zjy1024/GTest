@@ -52,10 +52,16 @@ public class PullRefreshListView extends ListView {
             if (mRefresher.isDragging) {
                 mRefresher.isDragging = false;
                 if (mFRLisnter != null) {
-                    mRefresher.startLoading();
+                    mRefresher.onStateChanged(Refresher.stat_startRefresh);
                     mFRLisnter.startRefresh();
                 }
+            } else {
+                if (!mRefresher.isLoading) {
+                    mRefresher.onStateChanged(Refresher.stat_Pull);
+                }
             }
+        } else {
+            mRefresher.onStateChanged(Refresher.stat_RealseToRefresh);
         }
 
         Log.e("zjy", getClass() + "->onScrollChanged(): ==vetical" + t);
@@ -83,6 +89,7 @@ public class PullRefreshListView extends ListView {
         //        return super.overScrollBy(newDeltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, MAX_SCROLL,
         // maxOverScrollY,
         //                isTouchEvent);
+        Log.e("zjy", getClass() + "->overScrollBy(): maxY==" + MAX_SCROLL);
         return super.overScrollBy(deltaX, newDeltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, MAX_SCROLL,
                 isTouchEvent);
     }
