@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/test_tablayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:text="别人的Tablayout" />
+
+    <Button
+        android:id="@+id/test_ac_mediacodec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mediaCodec" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="btnClick"
-            android:text="测试PRListview"/>
+            android:text="测试PRListview" />
 
     </LinearLayout>
 
@@ -39,56 +41,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="btnClick"
-            android:text="横向膨胀"/>
+            android:text="横向膨胀" />
 
         <Button
             android:id="@+id/btn_animate_letfToRight_tx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="btnClick"
-            android:text="左向右弹入"/>
+            android:text="左向右弹入" />
 
         <Button
             android:id="@+id/btn_animate_top_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="btnClick"
-            android:text="从上往下划入"/>
-
+            android:text="从上往下划入" />
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <p.js.gtest.view.loading.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+        <p.js.gtest.view.loading.DyingLightLoading
+            android:layout_width="10dp"
+            app:boderWidth="1dp"
+            app:colorInner="@color/scroTabView_textColor"
+            app:colorRect="@color/scroTabView_textColor"
+            android:background="@color/colorPrimary"
+            android:layout_height="40dp"/>
+        <p.js.gtest.view.loading.CircleLoading
+            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/m_mViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <p.js.gtest.view.ScrollableTabView
         android:id="@+id/scrollTabview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:padding="10dp"/>
+        android:padding="10dp" />
 
 
-    <Button
-        android:id="@+id/test_tablayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="别人的Tablayout"/>
-    <Button
-        android:id="@+id/test_ac_mediacodec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mediaCodec"/>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/m_mViewPage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-
-        <p.js.gtest.view.LoadingView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"/>
-    </LinearLayout>
 </LinearLayout>

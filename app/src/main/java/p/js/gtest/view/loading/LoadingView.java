@@ -1,5 +1,6 @@
-package p.js.gtest.view;
+package p.js.gtest.view.loading;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -7,6 +8,7 @@ import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 
 import p.js.gtest.DisPlayUtils;
 
@@ -112,6 +114,7 @@ public class LoadingView extends View {
             }
             startX += mCellWidth;
         }
+//        startAnim();
         postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -123,4 +126,27 @@ public class LoadingView extends View {
             }
         }, 200);
     }
+
+    public void setPosition(int position) {
+        this.position = position;
+        invalidate();
+    }
+
+    public void setLoadCounts(int loadCounts) {
+        this.loadCounts = loadCounts;
+        invalidate();
+    }
+
+    ObjectAnimator animator;
+    void startAnim(){
+        if (animator == null) {
+            animator = ObjectAnimator.ofInt(this, "position", 0, loadCounts);
+            animator.setInterpolator(new AccelerateInterpolator());
+            animator.setDuration(150 * loadCounts);
+            animator.setRepeatCount(ObjectAnimator.INFINITE);
+            animator.start();
+        }
+
+    }
+
 }

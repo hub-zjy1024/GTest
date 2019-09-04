@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import p.js.gtest.view.LoadingView;
+import p.js.gtest.view.loading.LoadingView;
 
 /**
  Created by 张建宇 on 2019/7/22. */
@@ -68,7 +68,7 @@ public class Refresher implements IRefresher {
 
     @Override
     public void loadingFinished() {
-        Animation animation = new TranslateAnimation(1f, 0, 1f, 1f);
+        Animation animation = new TranslateAnimation(1f, 1f, 1f, 0f);
         animation.setInterpolator(new AccelerateInterpolator());
         animation.setDuration((long) (0.5 * 1000));
         animation.setAnimationListener(new Animation.AnimationListener() {
